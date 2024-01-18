@@ -1,0 +1,21 @@
+﻿@using test.Repository;
+@inject IConfiguration config;
+@inject IEmployeeRepository EmpRepo;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<h2>Service Id From controller @ViewBag.ID</h2>
+<h2>Service Id From View       @EmpRepo.Id</h2>
+<h2>Service Id From View       @config.GetSection("ProjectName").Value</h2>
+
+<environment include="Development,Production">
+    <h1>Deveopment</h1>
+    <!--local css,js-->
+</environment>
+<environment exclude="Development">
+
+
+    <!--cdn,cs,js-->
+</environment>

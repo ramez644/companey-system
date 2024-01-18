@@ -1,0 +1,22 @@
+﻿@* strong type *@
+@model List<Product>
+  
+
+
+<table class="table table-bordered">
+    @foreach (Product item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td><a href="/product/details/@item.Id">details</a></td>
+        </tr>
+        
+    }
+
+
+
+
+
+
+</table>

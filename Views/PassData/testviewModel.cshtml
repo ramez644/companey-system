@@ -1,0 +1,27 @@
+﻿@model EmoployeeWithManageAndBranchListViewModel
+@{
+    ViewData["Title"] = "testviewModel";
+}
+
+<h1>testviewModel</h1>
+
+@Model.EmpName
+<br />
+@Model.EmpId
+<br />
+<select class="form-control">
+
+        @foreach (var item in Model.Branches)
+        {
+
+    <option>
+        @item
+    </option>
+
+            
+        }
+        @(Model.Temp+10)
+    
+
+
+</select>

@@ -1,0 +1,39 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New</h1>
+@* @Html.ActionLink("back to list using html helper","Details","Depatment",new{deptId=1},new{@class="btn btn-success"}) *@
+@Html.ActionLink("back to list lec5 p1 ","Index")
+<br />
+<a asp-action="Index" asp-controller="Depatment">back to list tag helper</a>
+<br />
+@* <form method="post" action="/Depatment/SaveNew"> *@
+<a class="btn btn-success" asp-action="Details" asp-controller="Depatment" asp-route-deptId="1" asp-route-id="11"
+asp-fragment="up">Details</a>
+<br />
+<form asp-action="SaveNew" asp-controller="Depatment" method="post">
+
+
+    <div>
+
+        <label>Name</label>
+        @* <input type="text" name="Name" class="form-control" value="@Model.Name"/> *@
+        @* html helper lec5p1 *@
+        @* @Html.TextBox("Name") *@
+        @* @Html.TextAreaFor(s=>s.Name,new{style="color:red",placeholder="Enter Dept Name",@class="form-control"}) *@
+        @Html.EditorFor(s=>s.Name,new{htmlAttributes=new{@class="form-control"}})
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+ <div>
+
+     <label>Manager Name</label>
+        <input type="text" name="ManagerName" class="form-control" value="@Model.ManagerName" />
+ </div>
+    <input type="submit" value="Add" class="btn-success" />
+<a href="/Depatment/Index">Back To List</a>
+
+</form>
+

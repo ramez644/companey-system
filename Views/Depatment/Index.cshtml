@@ -1,0 +1,31 @@
+﻿@using test.Repository
+@* strongly type *@
+
+@model List<Department>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<a href=/Depatment/New>New Department</a>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Manager</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.ManagerName</td>
+
+
+        </tr>
+    }
+
+
+
+</table>

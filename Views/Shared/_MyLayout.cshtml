@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <div style="background-color:lightgray;height:200px">header</div>
+        <div style="display:flex ;height:300px">
+            <div style="background-color:lightgray;height:200px">Menu
+            <div style="background-color:lightblue;">
+                @RenderSection("MenuSection")
+            </div>
+            <div style="background-color:lightblue;">Change  
+                @RenderBody()
+            </div>
+   
+        </div>
+    </div>
+
+    </div>
+   <div style="background-color:lightgray;height:50px">footer
+
+        <div style="background-color:lightblue;">
+            @RenderSection("FooterSection",false)
+        </div>
+   </div>
+</body>
+</html>
